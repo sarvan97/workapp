@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calwork</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="authView" class="card auth-card">
+        <h1>Calwork</h1>
+        <p class="subtitle">California-inspired workout calendar</p>
+        <form id="authForm">
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Password (min 6 chars)" required />
+          <div class="auth-actions">
+            <button type="submit" id="loginBtn">Log In</button>
+            <button type="button" id="registerBtn" class="secondary">Register</button>
+          </div>
+        </form>
+        <p id="authMessage"></p>
+      </section>
+
+      <section id="dashboardView" class="hidden">
+        <header class="topbar card">
+          <div>
+            <h2>Workout Calendar</h2>
+            <p id="userEmail" class="subtitle"></p>
+          </div>
+          <button id="logoutBtn" class="secondary">Log out</button>
+        </header>
+
+        <section class="card form-card">
+          <h3 id="formTitle">Add Workout</h3>
+          <form id="logForm">
+            <div class="row">
+              <input type="date" id="logDate" required />
+              <input type="text" id="logText" placeholder="Ran 5k outdoors, 32 minutes #easy" required />
+            </div>
+            <div class="row actions-row">
+              <button type="submit">Save Log</button>
+              <button type="button" id="cancelEditBtn" class="secondary hidden">Cancel Edit</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="calendar card">
+          <div class="calendar-head">
+            <button id="prevMonth" class="secondary">◀</button>
+            <h3 id="monthTitle"></h3>
+            <button id="nextMonth" class="secondary">▶</button>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </section>
+
+        <section class="card" id="detailsPanel">
+          <h3 id="detailsDateTitle">Select a day</h3>
+          <ul id="detailsList"></ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
